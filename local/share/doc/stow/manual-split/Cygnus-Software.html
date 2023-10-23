@@ -1,95 +1,103 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Cygnus Software - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" title="Compile-time vs Install-time">
-<link rel="prev" href="Other-FSF-Software.html#Other-FSF-Software" title="Other FSF Software">
-<link rel="next" href="Perl-and-Perl-5-Modules.html#Perl-and-Perl-5-Modules" title="Perl and Perl 5 Modules">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Cygnus Software (Stow)</title>
+
+<meta name="description" content="Cygnus Software (Stow)">
+<meta name="keywords" content="Cygnus Software (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Compile_002dtime-vs-Install_002dtime.html" rel="up" title="Compile-time vs Install-time">
+<link href="Perl-and-Perl-5-Modules.html" rel="next" title="Perl and Perl 5 Modules">
+<link href="Other-FSF-Software.html" rel="prev" title="Other FSF Software">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span.r {font-family: initial; font-weight: normal; font-style: normal}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Cygnus-Software"></a>
-<p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Perl-and-Perl-5-Modules.html#Perl-and-Perl-5-Modules">Perl and Perl 5 Modules</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Other-FSF-Software.html#Other-FSF-Software">Other FSF Software</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime">Compile-time vs Install-time</a>
-<hr>
-</div>
 
-<h3 class="section">12.4 Cygnus Software</h3>
+<body lang="en">
+<div class="section-level-extent" id="Cygnus-Software">
+<div class="nav-panel">
+<p>
+Next: <a href="Perl-and-Perl-5-Modules.html" accesskey="n" rel="next">Perl and Perl 5 Modules</a>, Previous: <a href="Other-FSF-Software.html" accesskey="p" rel="prev">Other FSF Software</a>, Up: <a href="Compile_002dtime-vs-Install_002dtime.html" accesskey="u" rel="up">Compile-time vs Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h3 class="section" id="Cygnus-Software-1"><span>12.4 Cygnus Software<a class="copiable-link" href="#Cygnus-Software-1"> &para;</a></span></h3>
 
 <p>Cygnus is a commercial supplier and supporter of GNU software.  It has
 also written several of its own packages, released under the terms of
 the GNU General Public License; and it has taken over the maintenance of
-other packages.  Among the packages released by Cygnus are &lsquo;<samp><span class="samp">gdb</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">gnats</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">dejagnu</span></samp>&rsquo;.
-
-   <p>Cygnus packages have the peculiarity that each one unpacks into a
+other packages.  Among the packages released by Cygnus are &lsquo;<samp class="samp">gdb</samp>&rsquo;,
+&lsquo;<samp class="samp">gnats</samp>&rsquo;, and &lsquo;<samp class="samp">dejagnu</samp>&rsquo;.
+</p>
+<p>Cygnus packages have the peculiarity that each one unpacks into a
 directory tree with a generic top-level Makefile, which is set up to
-compile <em>all</em> of Cygnus' packages, any number of which may reside
-under the top-level directory.  In other words, even if you're only
-building &lsquo;<samp><span class="samp">gnats</span></samp>&rsquo;, the top-level Makefile will look for, and try to
-build, <samp><span class="file">gdb</span></samp> and <samp><span class="file">dejagnu</span></samp> subdirectories, among many others.
-
-   <p>The result is that if you try &lsquo;<samp><span class="samp">make -n install
-prefix=/usr/local/stow/</span><var>package</var></samp>&rsquo; at the top level of a Cygnus
-package, you'll get a bewildering amount of output.  It will then be
+compile <em class="emph">all</em> of Cygnus&rsquo; packages, any number of which may reside
+under the top-level directory.  In other words, even if you&rsquo;re only
+building &lsquo;<samp class="samp">gnats</samp>&rsquo;, the top-level Makefile will look for, and try to
+build, <samp class="file">gdb</samp> and <samp class="file">dejagnu</samp> subdirectories, among many others.
+</p>
+<p>The result is that if you try &lsquo;<samp class="samp">make -n install
+prefix=/usr/local/stow/<var class="var">package</var></samp>&rsquo; at the top level of a Cygnus
+package, you&rsquo;ll get a bewildering amount of output.  It will then be
 very difficult to visually scan the output to see whether the install
-will proceed correctly.  Unfortunately, it's not always clear how to
+will proceed correctly.  Unfortunately, it&rsquo;s not always clear how to
 invoke an install from the subdirectory of interest.
-
-   <p>In cases like this, the best approach is to run your &lsquo;<samp><span class="samp">make install
-prefix=...</span></samp>&rsquo;, but be ready to interrupt it if you detect that it
+</p>
+<p>In cases like this, the best approach is to run your &lsquo;<samp class="samp">make install
+prefix=<span class="r">&hellip;</span></samp>&rsquo;, but be ready to interrupt it if you detect that it
 is recompiling files.  Usually it will work just fine; otherwise,
 install manually.
+</p>
+</div>
 
-<!--  -->
-   </body></html>
 
+
+</body>
+</html>

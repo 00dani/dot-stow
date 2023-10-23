@@ -1,93 +1,101 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Justification For Yet Another Set Of Ignore Files - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Ignore-Lists.html#Ignore-Lists" title="Ignore Lists">
-<link rel="prev" href="Types-And-Syntax-Of-Ignore-Lists.html#Types-And-Syntax-Of-Ignore-Lists" title="Types And Syntax Of Ignore Lists">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Justification For Yet Another Set Of Ignore Files (Stow)</title>
+
+<meta name="description" content="Justification For Yet Another Set Of Ignore Files (Stow)">
+<meta name="keywords" content="Justification For Yet Another Set Of Ignore Files (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Ignore-Lists.html" rel="up" title="Ignore Lists">
+<link href="Types-And-Syntax-Of-Ignore-Lists.html" rel="prev" title="Types And Syntax Of Ignore Lists">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Justification-For-Yet-Another-Set-Of-Ignore-Files"></a>
-<p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Types-And-Syntax-Of-Ignore-Lists.html#Types-And-Syntax-Of-Ignore-Lists">Types And Syntax Of Ignore Lists</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Ignore-Lists.html#Ignore-Lists">Ignore Lists</a>
-<hr>
-</div>
 
-<h3 class="section">4.3 Justification For Yet Another Set Of Ignore Files</h3>
+<body lang="en">
+<div class="section-level-extent" id="Justification-For-Yet-Another-Set-Of-Ignore-Files">
+<div class="nav-panel">
+<p>
+Previous: <a href="Types-And-Syntax-Of-Ignore-Lists.html" accesskey="p" rel="prev">Types And Syntax Of Ignore Lists</a>, Up: <a href="Ignore-Lists.html" accesskey="u" rel="up">Ignore Lists</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h3 class="section" id="Justification-For-Yet-Another-Set-Of-Ignore-Files-1"><span>4.3 Justification For Yet Another Set Of Ignore Files<a class="copiable-link" href="#Justification-For-Yet-Another-Set-Of-Ignore-Files-1"> &para;</a></span></h3>
 
 <p>The reader may note that this format is very similar to existing
-ignore list file formats, such as those for <samp><span class="command">cvs</span></samp>, <samp><span class="command">git</span></samp>,
-<samp><span class="command">rsync</span></samp> etc., and wonder if another set of ignore lists is
+ignore list file formats, such as those for <code class="command">cvs</code>, <code class="command">git</code>,
+<code class="command">rsync</code> etc., and wonder if another set of ignore lists is
 justified.  However there are good reasons why Stow does not simply
-check for the presence of say, <samp><span class="file">.cvsignore</span></samp>, and use that if it
+check for the presence of say, <samp class="file">.cvsignore</samp>, and use that if it
 exists.  Firstly, there is no guarantee that a stow package would
 contain any version control meta-data, or permit introducing this if
-it didn't already exist.
-
-   <p>Secondly even if it did, version control system ignore lists generally
-reflect <em>build-time</em> ignores rather than <em>install-time</em>, and
+it didn&rsquo;t already exist.
+</p>
+<p>Secondly even if it did, version control system ignore lists generally
+reflect <em class="emph">build-time</em> ignores rather than <em class="emph">install-time</em>, and
 there may be some intermediate or temporary files on those ignore
 lists generated during development or at build-time which it would be
 inappropriate to stow, even though many files generated at build-time
 (binaries, libraries, documentation etc.) certainly do need to be
-stowed.  Similarly, if a file is <em>not</em> in the version control
-system's ignore list, there is no way of knowing whether the file is
+stowed.  Similarly, if a file is <em class="emph">not</em> in the version control
+system&rsquo;s ignore list, there is no way of knowing whether the file is
 intended for end use, let alone whether the version control system is
 tracking it or not.
-
-   <p>Therefore it seems clear that ignore lists provided by version control
+</p>
+<p>Therefore it seems clear that ignore lists provided by version control
 systems do not provide sufficient information for Stow to determine
 which files and directories to stow, and so it makes sense for Stow to
 support independent ignore lists.
+</p>
+</div>
 
-<!-- =========================================================================== -->
-   </body></html>
 
+
+</body>
+</html>

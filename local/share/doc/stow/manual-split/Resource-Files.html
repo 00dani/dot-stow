@@ -1,108 +1,146 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Resource Files - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Target-Maintenance.html#Target-Maintenance" title="Target Maintenance">
-<link rel="next" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" title="Compile-time vs Install-time">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Resource Files (Stow)</title>
+
+<meta name="description" content="Resource Files (Stow)">
+<meta name="keywords" content="Resource Files (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Compile_002dtime-vs-Install_002dtime.html" rel="next" title="Compile-time vs Install-time">
+<link href="Target-Maintenance.html" rel="prev" title="Target Maintenance">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Resource-Files"></a>
+
+<body lang="en">
+<div class="chapter-level-extent" id="Resource-Files">
+<div class="nav-panel">
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime">Compile-time vs Install-time</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Maintenance.html#Target-Maintenance">Target Maintenance</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+Next: <a href="Compile_002dtime-vs-Install_002dtime.html" accesskey="n" rel="next">Compile-time vs Install-time</a>, Previous: <a href="Target-Maintenance.html" accesskey="p" rel="prev">Target Maintenance</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
 </div>
+<hr>
+<h2 class="chapter" id="Resource-Files-1"><span>11 Resource Files<a class="copiable-link" href="#Resource-Files-1"> &para;</a></span></h2>
+<a class="index-entry-id" id="index-resource-files"></a>
+<a class="index-entry-id" id="index-configuration-files"></a>
 
-<h2 class="chapter">11 Resource Files</h2>
-
-<p><a name="index-resource-files-36"></a><a name="index-configuration-files-37"></a>
-Default command line options may be set in <samp><span class="file">.stowrc</span></samp> (current directory) or
-<samp><span class="file">~/.stowrc</span></samp> (home directory). These are parsed in that order, and effectively
-prepended to you command line.  This feature can be used for some interesting
-effects.
-
-   <p>For example, suppose your site uses more than one stow directory, perhaps in
+<p>Default command line options may be set in <samp class="file">.stowrc</samp> (current
+directory) or <samp class="file">~/.stowrc</samp> (home directory). These are parsed in
+that order, and are appended together if they both exist. The effect of
+the options in the resource file is similar to simply prepending the
+options to the command line. This feature can be used for some
+interesting effects.
+</p>
+<p>For example, suppose your site uses more than one stow directory, perhaps in
 order to share around responsibilities with a number of systems
 administrators. One of the administrators might have the following in their
-<samp><span class="file">~/.stowrc</span></samp> file:
+<samp class="file">~/.stowrc</samp> file:
+</p>
+<div class="example">
+<pre class="example-preformatted">--dir=/usr/local/stow2
+--target=/usr/local
+--ignore='~'
+--ignore='^CVS'
+</pre></div>
 
-<pre class="example">     --dir=/usr/local/stow2
-     --target=/usr/local
-     --ignore='~'
-     --ignore='^CVS'
-</pre>
-   <p>so that the <samp><span class="command">stow</span></samp> command will default to operating on the
-<samp><span class="file">/usr/local/stow2</span></samp> directory, with <samp><span class="file">/usr/local</span></samp> as the
+<p>so that the <code class="command">stow</code> command will default to operating on the
+<samp class="file">/usr/local/stow2</samp> directory, with <samp class="file">/usr/local</samp> as the
 target, and ignoring vi backup files and CVS directories.
-
-   <p>If you had a stow directory <samp><span class="file">/usr/local/stow/perl-extras</span></samp> that
+</p>
+<p>If you had a stow directory <samp class="file">/usr/local/stow/perl-extras</samp> that
 was only used for Perl modules, then you might place the following in
-<samp><span class="file">/usr/local/stow/perl-extras/.stowrc</span></samp>:
+<samp class="file">/usr/local/stow/perl-extras/.stowrc</samp>:
+</p>
+<div class="example">
+<pre class="example-preformatted">--dir=/usr/local/stow/perl-extras
+--target=/usr/local
+--override=bin
+--override=man
+--ignore='perllocal\.pod'
+--ignore='\.packlist'
+--ignore='\.bs'
+</pre></div>
 
-<pre class="example">     --dir=/usr/local/stow/perl-extras
-     --target=/usr/local
-     --override=bin
-     --override=man
-     --ignore='perllocal\.pod'
-     --ignore='\.packlist'
-     --ignore='\.bs'
-</pre>
-   <p>so that when you are in the <samp><span class="file">/usr/local/stow/perl-extras</span></samp>
-directory, <samp><span class="command">stow</span></samp> will regard any subdirectories as stow
-packages, with <samp><span class="file">/usr/local</span></samp> as the target (rather than the
-immediate parent directory <samp><span class="file">/usr/local/stow</span></samp>), overriding any
+<p>so that when you are in the <samp class="file">/usr/local/stow/perl-extras</samp>
+directory, <code class="command">stow</code> will regard any subdirectories as stow
+packages, with <samp class="file">/usr/local</samp> as the target (rather than the
+immediate parent directory <samp class="file">/usr/local/stow</samp>), overriding any
 pre-existing links to bin files or man pages, and ignoring some cruft
 that gets installed by default.
+</p>
+<p>If an option is provided both on the command line and in a resource file,
+the command line option takes precedence. For options that provide a single
+value, such as <code class="command">--target</code> or <code class="command">--dir</code>, the command line
+option will overwrite any options in the resource file. For options that can
+be given more than once, <code class="command">--ignore</code> for example, command line
+options and resource options are appended together.
+</p>
+<p>For options that take a file path, environment variables and the tilde
+character (<code class="command">~</code>) are expanded. An environment variable can be
+given in either the <code class="command">$VAR</code> or <code class="command">${VAR}</code> form. To
+prevent expansion, escape the <code class="command">$</code> or <code class="command">~</code> with a
+backslash.
+</p>
+<p>The options <code class="command">-D</code>, <code class="command">-S</code>, and <code class="command">-R</code> are ignored in
+resource files. This is also true of any package names given in the
+resource file.
+</p>
+</div>
+<hr>
+<div class="nav-panel">
+<p>
+Next: <a href="Compile_002dtime-vs-Install_002dtime.html">Compile-time vs Install-time</a>, Previous: <a href="Target-Maintenance.html">Target Maintenance</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
 
-<!-- =========================================================================== -->
-   </body></html>
 
+
+</body>
+</html>

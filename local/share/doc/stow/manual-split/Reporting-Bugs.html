@@ -1,98 +1,107 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Reporting Bugs - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Bootstrapping.html#Bootstrapping" title="Bootstrapping">
-<link rel="next" href="Known-Bugs.html#Known-Bugs" title="Known Bugs">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Reporting Bugs (Stow)</title>
+
+<meta name="description" content="Reporting Bugs (Stow)">
+<meta name="keywords" content="Reporting Bugs (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Known-Bugs.html" rel="next" title="Known Bugs">
+<link href="Bootstrapping.html" rel="prev" title="Bootstrapping">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+ul.mark-bullet {list-style-type: disc}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Reporting-Bugs"></a>
-<p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Known-Bugs.html#Known-Bugs">Known Bugs</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Bootstrapping.html#Bootstrapping">Bootstrapping</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
-</div>
 
-<h2 class="chapter">14 Reporting Bugs</h2>
+<body lang="en">
+<div class="chapter-level-extent" id="Reporting-Bugs">
+<div class="nav-panel">
+<p>
+Next: <a href="Known-Bugs.html" accesskey="n" rel="next">Known Bugs</a>, Previous: <a href="Bootstrapping.html" accesskey="p" rel="prev">Bootstrapping</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h2 class="chapter" id="Reporting-Bugs-1"><span>14 Reporting Bugs<a class="copiable-link" href="#Reporting-Bugs-1"> &para;</a></span></h2>
 
 <p>Please send bug reports to the current maintainers by electronic
-mail.  The address to use is &lsquo;<samp><span class="samp">&lt;bug-stow@gnu.org&gt;</span></samp>&rsquo;.  Please
+mail.  The address to use is &lsquo;<samp class="samp">&lt;bug-stow@gnu.org&gt;</samp>&rsquo;.  Please
 include:
+</p>
+<ul class="itemize mark-bullet">
+<li>the version number of Stow (&lsquo;<samp class="samp">stow --version</samp>&rsquo;);
 
-     <ul>
-<li>the version number of Stow (&lsquo;<samp><span class="samp">stow --version</span></samp>&rsquo;);
+</li><li>the version number of Perl (&lsquo;<samp class="samp">perl -v</samp>&rsquo;);
 
-     <li>the version number of Perl (&lsquo;<samp><span class="samp">perl -v</span></samp>&rsquo;);
+</li><li>the system information, which can often be obtained with &lsquo;<samp class="samp">uname
+-a</samp>&rsquo;;
 
-     <li>the system information, which can often be obtained with &lsquo;<samp><span class="samp">uname
--a</span></samp>&rsquo;;
+</li><li>a description of the bug;
 
-     <li>a description of the bug;
+</li><li>the precise command you gave;
 
-     <li>the precise command you gave;
+</li><li>the output from the command (preferably verbose output, obtained by
+adding &lsquo;<samp class="samp">--verbose=3</samp>&rsquo; to the Stow command line).
+</li></ul>
 
-     <li>the output from the command (preferably verbose output, obtained by
-adding &lsquo;<samp><span class="samp">--verbose=3</span></samp>&rsquo; to the Stow command line). 
-</ul>
-
-   <p>If you are really keen, consider developing a minimal test case and
-creating a new test.  See the <samp><span class="file">t/</span></samp> directory in the source for
+<p>If you are really keen, consider developing a minimal test case and
+creating a new test.  See the <samp class="file">t/</samp> directory in the source for
 lots of examples.
+</p>
+<p>Before reporting a bug, please read the manual carefully, especially
+<a class="ref" href="Known-Bugs.html">Known Bugs</a>, to see whether you&rsquo;re encountering
+something that doesn&rsquo;t need reporting.
+(see <a class="pxref" href="Conflicts.html">Conflicts</a>).
+</p>
+</div>
 
-   <p>Before reporting a bug, please read the manual carefully, especially
-<a href="Known-Bugs.html#Known-Bugs">Known Bugs</a>, to see whether you're encountering
-something that doesn't need reporting. 
-(see <a href="Conflicts.html#Conflicts">Conflicts</a>).
 
-<!-- =========================================================================== -->
-   </body></html>
 
+</body>
+</html>

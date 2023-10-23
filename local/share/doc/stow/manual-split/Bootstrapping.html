@@ -1,89 +1,104 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Bootstrapping - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" title="Compile-time vs Install-time">
-<link rel="next" href="Reporting-Bugs.html#Reporting-Bugs" title="Reporting Bugs">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Bootstrapping (Stow)</title>
+
+<meta name="description" content="Bootstrapping (Stow)">
+<meta name="keywords" content="Bootstrapping (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Reporting-Bugs.html" rel="next" title="Reporting Bugs">
+<link href="Compile_002dtime-vs-Install_002dtime.html" rel="prev" title="Compile-time vs Install-time">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Bootstrapping"></a>
-<p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Reporting-Bugs.html#Reporting-Bugs">Reporting Bugs</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime">Compile-time vs Install-time</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
-</div>
 
-<h2 class="chapter">13 Bootstrapping</h2>
+<body lang="en">
+<div class="chapter-level-extent" id="Bootstrapping">
+<div class="nav-panel">
+<p>
+Next: <a href="Reporting-Bugs.html" accesskey="n" rel="next">Reporting Bugs</a>, Previous: <a href="Compile_002dtime-vs-Install_002dtime.html" accesskey="p" rel="prev">Compile-time vs Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h2 class="chapter" id="Bootstrapping-1"><span>13 Bootstrapping<a class="copiable-link" href="#Bootstrapping-1"> &para;</a></span></h2>
 
 <p>Suppose you have a stow directory all set up and ready to go:
-<samp><span class="file">/usr/local/stow/perl</span></samp> contains the Perl installation,
-<samp><span class="file">/usr/local/stow/stow</span></samp> contains Stow itself, and perhaps you have
-other packages waiting to be stowed.  You'd like to be able to do this:
+<samp class="file">/usr/local/stow/perl</samp> contains the Perl installation,
+<samp class="file">/usr/local/stow/stow</samp> contains Stow itself, and perhaps you have
+other packages waiting to be stowed.  You&rsquo;d like to be able to do this:
+</p>
+<div class="example">
+<pre class="example-preformatted">cd /usr/local/stow
+stow -vv *
+</pre></div>
 
-<pre class="example">     cd /usr/local/stow
-     stow -vv *
-</pre>
-   <p class="noindent">but <samp><span class="command">stow</span></samp> is not yet in your <samp><span class="env">PATH</span></samp>.  Nor can you do this:
+<p>but <code class="command">stow</code> is not yet in your <code class="env">PATH</code>.  Nor can you do this:
+</p>
+<div class="example">
+<pre class="example-preformatted">cd /usr/local/stow
+stow/bin/stow -vv *
+</pre></div>
 
-<pre class="example">     cd /usr/local/stow
-     stow/bin/stow -vv *
-</pre>
-   <p class="noindent">because the &lsquo;<samp><span class="samp">#!</span></samp>&rsquo; line at the beginning of <samp><span class="command">stow</span></samp> tries to
-locate Perl (usually in <samp><span class="file">/usr/local/bin/perl</span></samp>), and that won't be
+<p>because the &lsquo;<samp class="samp">#!</samp>&rsquo; line at the beginning of <code class="command">stow</code> tries to
+locate Perl (usually in <samp class="file">/usr/local/bin/perl</samp>), and that won&rsquo;t be
 found.  The solution you must use is:
+</p>
+<div class="example">
+<pre class="example-preformatted">cd /usr/local/stow
+perl/bin/perl stow/bin/stow -vv *
+</pre></div>
 
-<pre class="example">     cd /usr/local/stow
-     perl/bin/perl stow/bin/stow -vv *
-</pre>
-   <!-- =========================================================================== -->
-   </body></html>
+</div>
 
+
+
+</body>
+</html>

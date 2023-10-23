@@ -1,112 +1,126 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Deleting Packages - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Installing-Packages.html#Installing-Packages" title="Installing Packages">
-<link rel="next" href="Conflicts.html#Conflicts" title="Conflicts">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Deleting Packages (Stow)</title>
+
+<meta name="description" content="Deleting Packages (Stow)">
+<meta name="keywords" content="Deleting Packages (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Conflicts.html" rel="next" title="Conflicts">
+<link href="Installing-Packages.html" rel="prev" title="Installing Packages">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Deleting-Packages"></a>
+
+<body lang="en">
+<div class="chapter-level-extent" id="Deleting-Packages">
+<div class="nav-panel">
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Conflicts.html#Conflicts">Conflicts</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Installing-Packages.html#Installing-Packages">Installing Packages</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+Next: <a href="Conflicts.html" accesskey="n" rel="next">Conflicts</a>, Previous: <a href="Installing-Packages.html" accesskey="p" rel="prev">Installing Packages</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
 </div>
+<hr>
+<h2 class="chapter" id="Deleting-Packages-1"><span>6 Deleting Packages<a class="copiable-link" href="#Deleting-Packages-1"> &para;</a></span></h2>
 
-<h2 class="chapter">6 Deleting Packages</h2>
-
-<p><a name="index-deletion-28"></a>When the <samp><span class="option">-D</span></samp> option is given, the action of Stow is to
+<a class="index-entry-id" id="index-deletion"></a>
+<p>When the <samp class="option">-D</samp> option is given, the action of Stow is to
 delete a package from the target tree.  Note that Stow will not
-delete anything it doesn't &ldquo;own&rdquo;.  Deleting a package does <em>not</em>
+delete anything it doesn&rsquo;t &ldquo;own&rdquo;.  Deleting a package does <em class="emph">not</em>
 mean removing it from the stow directory or discarding the package
 tree.
-
-   <p>To delete a package, Stow recursively scans the target tree, skipping over any
-directory that is not included in the installation image.<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>
-For example, if the target directory is <samp><span class="file">/usr/local</span></samp> and the
-installation image for the package being deleted has only a <samp><span class="file">bin</span></samp>
-directory and a <samp><span class="file">man</span></samp> directory at the top level, then we only scan
-<samp><span class="file">/usr/local/bin</span></samp> and  <samp><span class="file">/usr/local/bin/man</span></samp>, and not
-<samp><span class="file">/usr/local/lib</span></samp> or <samp><span class="file">/usr/local/share</span></samp>, or for that matter
-<samp><span class="file">/usr/local/stow</span></samp>.  Any symlink it finds that points into the package
+</p>
+<p>To delete a package, Stow recursively scans the target tree, skipping over any
+directory that is not included in the installation image.<a class="footnote" id="DOCF7" href="#FOOT7"><sup>7</sup></a>
+For example, if the target directory is <samp class="file">/usr/local</samp> and the
+installation image for the package being deleted has only a <samp class="file">bin</samp>
+directory and a <samp class="file">man</samp> directory at the top level, then we only scan
+<samp class="file">/usr/local/bin</samp> and  <samp class="file">/usr/local/man</samp>, and not
+<samp class="file">/usr/local/lib</samp> or <samp class="file">/usr/local/share</samp>, or for that matter
+<samp class="file">/usr/local/stow</samp>.  Any symlink it finds that points into the package
 being deleted is removed.  Any directory that contained only symlinks to the
 package being deleted is removed.
+</p>
+<a class="anchor" id="tree-refolding"></a><ul class="mini-toc">
+<li><a href="#Refolding-_0060_0060foldable_0027_0027-trees_002e" accesskey="1">Refolding &ldquo;foldable&rdquo; trees.</a></li>
+</ul>
+<div class="section-level-extent" id="Refolding-_0060_0060foldable_0027_0027-trees_002e">
+<h3 class="section"><span>6.1 Refolding &ldquo;foldable&rdquo; trees.<a class="copiable-link" href="#Refolding-_0060_0060foldable_0027_0027-trees_002e"> &para;</a></span></h3>
+<a class="index-entry-id" id="index-refolding-trees"></a>
+<a class="index-entry-id" id="index-tree-refolding"></a>
 
-   <p><a name="tree-refolding"></a>
-
-<h3 class="section">6.1 Refolding &ldquo;foldable&rdquo; trees.</h3>
-
-<p><a name="index-refolding-trees-29"></a><a name="index-tree-refolding-30"></a>
-After removing symlinks and empty subdirectories, any directory that
+<p>After removing symlinks and empty subdirectories, any directory that
 contains only symlinks to a single other package is considered to be a
 previously &ldquo;folded&rdquo; tree that was &ldquo;split open.&rdquo;  Stow will refold
 the tree by removing the symlinks to the surviving package, removing
 the directory, then linking the directory back to the surviving
 package.  However, this behaviour can be prevented via the
-<samp><span class="option">--no-folding</span></samp> option; see <a href="Invoking-Stow.html#Invoking-Stow">Invoking Stow</a>.
-
-<!-- =========================================================================== -->
-   <div class="footnote">
+<samp class="option">--no-folding</samp> option; see <a class="pxref" href="Invoking-Stow.html">Invoking Stow</a>.
+</p>
+</div>
+</div>
+<div class="footnotes-segment">
 <hr>
-<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> This
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5 class="footnote-body-heading"><a id="FOOT7" href="#DOCF7">(7)</a></h5>
+<p>This
 approach was introduced in version 2 of GNU Stow.  Previously, the whole
 target tree was scanned and stow directories were explicitly omitted.  This
 became problematic when dealing with very large installations.  The only
 situation where this is useful is if you accidentally delete a directory in
 the package tree, leaving you with a whole bunch of dangling links.  Note that
-you can enable the old approach with the <samp><span class="option">-p</span></samp> option.  Alternatively, you can
-use the <samp><span class="option">--badlinks</span></samp> option get stow to search for dangling links in your target tree and remove the offenders manually.</p>
+you can enable the old approach with the <samp class="option">-p</samp> option.  Alternatively, you can
+use the <samp class="option">--badlinks</samp> option get stow to search for dangling links in your target tree and remove the offenders manually.</p>
+</div>
 
-   <hr></div>
 
-   </body></html>
 
+</body>
+</html>

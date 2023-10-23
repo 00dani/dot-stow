@@ -1,150 +1,178 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Perl and Perl 5 Modules - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime" title="Compile-time vs Install-time">
-<link rel="prev" href="Cygnus-Software.html#Cygnus-Software" title="Cygnus Software">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Perl and Perl 5 Modules (Stow)</title>
+
+<meta name="description" content="Perl and Perl 5 Modules (Stow)">
+<meta name="keywords" content="Perl and Perl 5 Modules (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Compile_002dtime-vs-Install_002dtime.html" rel="up" title="Compile-time vs Install-time">
+<link href="Cygnus-Software.html" rel="prev" title="Cygnus Software">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span.r {font-family: initial; font-weight: normal; font-style: normal}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Perl-and-Perl-5-Modules"></a>
-<p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Cygnus-Software.html#Cygnus-Software">Cygnus Software</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Compile_002dtime-vs-Install_002dtime.html#Compile_002dtime-vs-Install_002dtime">Compile-time vs Install-time</a>
-<hr>
-</div>
 
-<h3 class="section">12.5 Perl and Perl 5 Modules</h3>
+<body lang="en">
+<div class="section-level-extent" id="Perl-and-Perl-5-Modules">
+<div class="nav-panel">
+<p>
+Previous: <a href="Cygnus-Software.html" accesskey="p" rel="prev">Cygnus Software</a>, Up: <a href="Compile_002dtime-vs-Install_002dtime.html" accesskey="u" rel="up">Compile-time vs Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h3 class="section" id="Perl-and-Perl-5-Modules-1"><span>12.5 Perl and Perl 5 Modules<a class="copiable-link" href="#Perl-and-Perl-5-Modules-1"> &para;</a></span></h3>
 
 <p>Perl 4.036 allows you to specify different locations for installation
-and for run-time.  It is the only widely-used package in this author's
+and for run-time.  It is the only widely-used package in this author&rsquo;s
 experience that allows this, though hopefully more packages will adopt
 this model.
-
-   <p>Unfortunately, the authors of Perl believed that only AFS sites need
+</p>
+<p>Unfortunately, the authors of Perl believed that only AFS sites need
 this ability.  The configuration instructions for Perl 4 misleadingly
 state that some occult means are used under AFS to transport files from
 their installation tree to their run-time tree.  In fact, that confusion
-arises from the fact that Depot, Stow's predecessor, originated at
-Carnegie Mellon University, which was also the birthplace of AFS.  CMU's
+arises from the fact that Depot, Stow&rsquo;s predecessor, originated at
+Carnegie Mellon University, which was also the birthplace of AFS.  CMU&rsquo;s
 need to separate install-time and run-time trees stemmed from its use of
 Depot, not from AFS.
-
-   <p>The result of this confusion is that Perl 5's configuration script
-doesn't even offer the option of separating install-time and run-time
-trees <em>unless</em> you're running AFS.  Fortunately, after you've
-entered all the configuration settings, Perl's setup script gives you
+</p>
+<p>The result of this confusion is that Perl 5&rsquo;s configuration script
+doesn&rsquo;t even offer the option of separating install-time and run-time
+trees <em class="emph">unless</em> you&rsquo;re running AFS.  Fortunately, after you&rsquo;ve
+entered all the configuration settings, Perl&rsquo;s setup script gives you
 the opportunity to edit those settings in a file called
-<samp><span class="file">config.sh</span></samp>.  When prompted, you should edit this file and replace
+<samp class="file">config.sh</samp>.  When prompted, you should edit this file and replace
 occurrences of
+</p>
+<div class="example">
+<pre class="example-preformatted">inst<span class="r">...</span>/usr/local<span class="r">...</span>
+</pre></div>
 
-<pre class="example">     inst<span class="roman">...</span>/usr/local<span class="roman">...</span>
-</pre>
-   <p class="noindent">with
+<p>with
+</p>
+<div class="example">
+<pre class="example-preformatted">inst<span class="r">...</span>/usr/local/stow/perl<span class="r">...</span>
+</pre></div>
 
-<pre class="example">     inst<span class="roman">...</span>/usr/local/stow/perl<span class="roman">...</span>
-</pre>
-   <p class="noindent">You can do this with the following Unix command:
+<p>You can do this with the following Unix command:
+</p>
+<div class="example">
+<pre class="example-preformatted">sed 's,^\(inst.*/usr/local\),\1/stow/perl,' config.sh &gt; config.sh.new
+mv config.sh.new config.sh
+</pre></div>
 
-<pre class="example">     sed 's,^\(inst.*/usr/local\),\1/stow/perl,' config.sh &gt; config.sh.new
-     mv config.sh.new config.sh
-</pre>
-   <p>Hopefully, the Perl authors will correct this deficiency in Perl 5's
+<p>Hopefully, the Perl authors will correct this deficiency in Perl 5&rsquo;s
 configuration mechanism.
-
-   <p>Perl 5 modules&mdash;i.e., extensions to Perl 5&mdash;generally conform to a set
+</p>
+<p>Perl 5 modules&mdash;i.e., extensions to Perl 5&mdash;generally conform to a set
 of standards for building and installing them.  The standard says that
-the package comes with a top-level <samp><span class="file">Makefile.PL</span></samp>, which is a Perl
-script.  When it runs, it generates a <samp><span class="file">Makefile</span></samp>.
-
-   <p>If you followed the instructions above for editing <samp><span class="file">config.sh</span></samp> when
-Perl was built, then when you create a <samp><span class="file">Makefile</span></samp> from a
-<samp><span class="file">Makefile.PL</span></samp>, it will contain separate locations for run-time
-(<samp><span class="file">/usr/local</span></samp>) and install-time (<samp><span class="file">/usr/local/stow/perl</span></samp>). 
+the package comes with a top-level <samp class="file">Makefile.PL</samp>, which is a Perl
+script.  When it runs, it generates a <samp class="file">Makefile</samp>.
+</p>
+<p>If you followed the instructions above for editing <samp class="file">config.sh</samp> when
+Perl was built, then when you create a <samp class="file">Makefile</samp> from a
+<samp class="file">Makefile.PL</samp>, it will contain separate locations for run-time
+(<samp class="file">/usr/local</samp>) and install-time (<samp class="file">/usr/local/stow/perl</samp>).
 Thus you can do
+</p>
+<div class="example">
+<pre class="example-preformatted">perl Makefile.PL
+make
+make install
+</pre></div>
 
-<pre class="example">     perl Makefile.PL
-     make
-     make install
-</pre>
-   <p class="noindent">and the files will be installed into <samp><span class="file">/usr/local/stow/perl</span></samp>. 
+<p>and the files will be installed into <samp class="file">/usr/local/stow/perl</samp>.
 However, you might prefer each Perl module to be stowed separately.  In
 that case, you must edit the resulting Makefile, replacing
-<samp><span class="file">/usr/local/stow/perl</span></samp> with <samp><span class="file">/usr/local/stow/</span><var>module</var></samp>. 
+<samp class="file">/usr/local/stow/perl</samp> with <samp class="file">/usr/local/stow/<var class="var">module</var></samp>.
 The best way to do this is:
+</p>
+<div class="example">
+<pre class="example-preformatted">perl Makefile.PL
+find . -name Makefile -print | \
+  xargs perl -pi~ -e 's,^(INST.*/stow)/perl,$1/<var class="var">module</var>,;'
+make
+make install
+</pre></div>
 
-<pre class="example">     perl Makefile.PL
-     find . -name Makefile -print | \
-       xargs perl -pi~ -e 's,^(INST.*/stow)/perl,$1/<var>module</var>,;'
-     make
-     make install
-</pre>
-   <p class="noindent">(The use of &lsquo;<samp><span class="samp">find</span></samp>&rsquo; and &lsquo;<samp><span class="samp">xargs</span></samp>&rsquo; ensures that all Makefiles in
-the module's source tree, even those in subdirectories, get edited.)  A
+<p>(The use of &lsquo;<samp class="samp">find</samp>&rsquo; and &lsquo;<samp class="samp">xargs</samp>&rsquo; ensures that all Makefiles in
+the module&rsquo;s source tree, even those in subdirectories, get edited.)  A
 good convention to follow is to name the stow directory for a Perl
-<var>module</var> <samp><span class="file">cpan.</span><var>module</var></samp>, where &lsquo;<samp><span class="samp">cpan</span></samp>&rsquo; stands for
+<var class="var">module</var> <samp class="file">cpan.<var class="var">module</var></samp>, where &lsquo;<samp class="samp">cpan</samp>&rsquo; stands for
 Comprehensive Perl Archive Network, a collection of FTP sites that is
-the source of most Perl 5 extensions.  This way, it's easy to tell at a
-glance which of the subdirectories of <samp><span class="file">/usr/local/stow</span></samp> are Perl 5
+the source of most Perl 5 extensions.  This way, it&rsquo;s easy to tell at a
+glance which of the subdirectories of <samp class="file">/usr/local/stow</samp> are Perl 5
 extensions.
-
-   <p>When you stow separate Perl 5 modules separately, you are likely to
-encounter conflicts (see <a href="Conflicts.html#Conflicts">Conflicts</a>) with files named <samp><span class="file">.exists</span></samp>
-and <samp><span class="file">perllocal.pod</span></samp>.  One way to work around this is to remove
+</p>
+<p>When you stow separate Perl 5 modules separately, you are likely to
+encounter conflicts (see <a class="pxref" href="Conflicts.html">Conflicts</a>) with files named <samp class="file">.exists</samp>
+and <samp class="file">perllocal.pod</samp>.  One way to work around this is to remove
 those files before stowing the module.  If you use the
-<samp><span class="file">cpan.</span><var>module</var></samp> naming convention, you can simply do this:
+<samp class="file">cpan.<var class="var">module</var></samp> naming convention, you can simply do this:
+</p>
+<div class="example">
+<pre class="example-preformatted">cd /usr/local/stow
+find cpan.* \( -name .exists -o -name perllocal.pod \) -print | \
+  xargs rm
+</pre></div>
 
-<pre class="example">     cd /usr/local/stow
-     find cpan.* \( -name .exists -o -name perllocal.pod \) -print | \
-       xargs rm
-</pre>
-   <!--  -->
-   </body></html>
 
+</div>
+<hr>
+<div class="nav-panel">
+<p>
+Previous: <a href="Cygnus-Software.html">Cygnus Software</a>, Up: <a href="Compile_002dtime-vs-Install_002dtime.html">Compile-time vs Install-time</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

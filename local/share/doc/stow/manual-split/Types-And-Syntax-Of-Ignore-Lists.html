@@ -1,167 +1,182 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Types And Syntax Of Ignore Lists - Stow</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Stow">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Ignore-Lists.html#Ignore-Lists" title="Ignore Lists">
-<link rel="prev" href="Motivation-For-Ignore-Lists.html#Motivation-For-Ignore-Lists" title="Motivation For Ignore Lists">
-<link rel="next" href="Justification-For-Yet-Another-Set-Of-Ignore-Files.html#Justification-For-Yet-Another-Set-Of-Ignore-Files" title="Justification For Yet Another Set Of Ignore Files">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
-<!--
-This manual describes GNU Stow version 2.2.2
-(9 November 2015), a program for managing the installation of software
-packages.
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual describes GNU Stow version 2.3.2-fixbug56727
+(23 October 2023), a program for managing farms of symbolic links.
 
 Software and documentation is copyrighted by the following:
 
-(C) 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
+© 1993, 1994, 1995, 1996 Bob Glickstein <bobg+stow@zanshin.com>
 
-(C) 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
+© 2000, 2001 Guillaume Morin <gmorin@gnu.org>
 
-(C) 2011 Adam Spiers <stow@adamspiers.org>
 
-     Permission is granted to make and distribute verbatim copies of
-     this manual provided the copyright notice and this permission
-     notice are preserved on all copies.
+© 2007 Kahlil (Kal) Hodgson <kahlil@internode.on.net>
 
-     Permission is granted to copy and distribute modified versions of
-     this manual under the conditions for verbatim copying, provided
-     also that the section entitled ``GNU General Public License'' is
-     included with the modified manual, and provided that the entire
-     resulting derived work is distributed under the terms of a
-     permission notice identical to this one.
 
-     Permission is granted to copy and distribute translations of this
-     manual into another language, under the above conditions for
-     modified versions, except that this permission notice may be
-     stated in a translation approved by the Free Software Foundation.
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
+© 2011 Adam Spiers <stow@adamspiers.org>
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "GNU General Public License" is included with the
+modified manual, and provided that the entire resulting derived work is
+distributed under the terms of a permission notice identical to this
+one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the Free Software Foundation. -->
+<title>Types And Syntax Of Ignore Lists (Stow)</title>
+
+<meta name="description" content="Types And Syntax Of Ignore Lists (Stow)">
+<meta name="keywords" content="Types And Syntax Of Ignore Lists (Stow)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Ignore-Lists.html" rel="up" title="Ignore Lists">
+<link href="Justification-For-Yet-Another-Set-Of-Ignore-Files.html" rel="next" title="Justification For Yet Another Set Of Ignore Files">
+<link href="Motivation-For-Ignore-Lists.html" rel="prev" title="Motivation For Ignore Lists">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+
+
 </head>
-<body>
-<div class="node">
-<a name="Types-And-Syntax-Of-Ignore-Lists"></a>
-<p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Justification-For-Yet-Another-Set-Of-Ignore-Files.html#Justification-For-Yet-Another-Set-Of-Ignore-Files">Justification For Yet Another Set Of Ignore Files</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Motivation-For-Ignore-Lists.html#Motivation-For-Ignore-Lists">Motivation For Ignore Lists</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Ignore-Lists.html#Ignore-Lists">Ignore Lists</a>
-<hr>
-</div>
 
-<h3 class="section">4.2 Types And Syntax Of Ignore Lists</h3>
+<body lang="en">
+<div class="section-level-extent" id="Types-And-Syntax-Of-Ignore-Lists">
+<div class="nav-panel">
+<p>
+Next: <a href="Justification-For-Yet-Another-Set-Of-Ignore-Files.html" accesskey="n" rel="next">Justification For Yet Another Set Of Ignore Files</a>, Previous: <a href="Motivation-For-Ignore-Lists.html" accesskey="p" rel="prev">Motivation For Ignore Lists</a>, Up: <a href="Ignore-Lists.html" accesskey="u" rel="up">Ignore Lists</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h3 class="section" id="Types-And-Syntax-Of-Ignore-Lists-1"><span>4.2 Types And Syntax Of Ignore Lists<a class="copiable-link" href="#Types-And-Syntax-Of-Ignore-Lists-1"> &para;</a></span></h3>
 
 <p>If you put Perl regular expressions, one per line, in a
-<samp><span class="file">.stow-local-ignore</span></samp> file within any top level package directory,
+<samp class="file">.stow-local-ignore</samp> file within any top level package directory,
 in which case any file or directory within that package matching any
 of these regular expressions will be ignored.  In the absence of this
 package-specific ignore list, Stow will instead use the contents of
-<samp><span class="file">~/.stow-global-ignore</span></samp>, if it exists.  If neither the
+<samp class="file">~/.stow-global-ignore</samp>, if it exists.  If neither the
 package-local or global ignore list exist, Stow will use its own
 built-in default ignore list, which serves as a useful example of the
 format of these ignore list files:
+</p>
+<div class="example">
+<pre class="verbatim"># Comments and blank lines are allowed.
 
-<pre class="example"><pre class="verbatim">     # Comments and blank lines are allowed.
-     
-     RCS
-     .+,v
-     
-     CVS
-     \.\#.+       # CVS conflict files / emacs lock files
-     \.cvsignore
-     
-     \.svn
-     _darcs
-     \.hg
-     
-     \.git
-     \.gitignore
-     
-     .+~          # emacs backup files
-     \#.*\#       # emacs autosave files
-     
-     ^/README.*
-     ^/LICENSE.*
-     ^/COPYING
-</pre></pre>
-   <p>Stow first iterates through the chosen ignore list (built-in, global,
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+</pre></div>
+
+<p>Stow first iterates through the chosen ignore list (built-in, global,
 or package-local) as per above, stripping out comments (if you want to
-include the &lsquo;<samp><span class="samp">#</span></samp>&rsquo; symbol in a regular expression, escape it with a
+include the &lsquo;<samp class="samp">#</samp>&rsquo; symbol in a regular expression, escape it with a
 blackslash) and blank lines, placing each regular expressions into one
-of two sets depending on whether it contains the &lsquo;<samp><span class="samp">/</span></samp>&rsquo; forward
+of two sets depending on whether it contains the &lsquo;<samp class="samp">/</samp>&rsquo; forward
 slash symbol.
-
-   <p>Then in order to determine whether a file or directory should be
+</p>
+<p>Then in order to determine whether a file or directory should be
 ignored:
-
-     <ol type=1 start=1>
-<li>Stow calculates its path relative to the top-level package directory,
-prefixing that with &lsquo;<samp><span class="samp">/</span></samp>&rsquo;.  If any of the regular expressions
-containing a &lsquo;<samp><span class="samp">/</span></samp>&rsquo; <em>exactly</em><a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> match
-a subpath<a rel="footnote" href="#fn-2" name="fnd-2"><sup>2</sup></a> of this relative path, then the file or
+</p>
+<ol class="enumerate">
+<li> Stow calculates its path relative to the top-level package directory,
+prefixing that with &lsquo;<samp class="samp">/</samp>&rsquo;.  If any of the regular expressions
+containing a &lsquo;<samp class="samp">/</samp>&rsquo; <em class="emph">exactly</em><a class="footnote" id="DOCF4" href="#FOOT4"><sup>4</sup></a> match
+a subpath<a class="footnote" id="DOCF5" href="#FOOT5"><sup>5</sup></a> of this relative path, then the file or
 directory will be ignored.
 
-     <li>If none of the regular expressions containing a &lsquo;<samp><span class="samp">/</span></samp>&rsquo; match in the
+</li><li> If none of the regular expressions containing a &lsquo;<samp class="samp">/</samp>&rsquo; match in the
 manner described above, Stow checks whether the
-<em>basename</em><a rel="footnote" href="#fn-3" name="fnd-3"><sup>3</sup></a> of the file or directory matches
-<em>exactly</em> against the remaining regular expressions which do not
-contain a &lsquo;<samp><span class="samp">/</span></samp>&rsquo;, and if so, ignores the file or directory.
+<em class="emph">basename</em><a class="footnote" id="DOCF6" href="#FOOT6"><sup>6</sup></a> of the file or directory matches
+<em class="emph">exactly</em> against the remaining regular expressions which do not
+contain a &lsquo;<samp class="samp">/</samp>&rsquo;, and if so, ignores the file or directory.
 
-     <li>Otherwise, the file or directory is not ignored.
-        </ol>
+</li><li> Otherwise, the file or directory is not ignored.
+</li></ol>
 
-<!-- N.B. if you change the examples below, please also consider -->
-<!-- updating test_examples_in_manual() in t/ignore.t. -->
-   <p>For example, if a file <samp><span class="file">bazqux</span></samp> is in the <samp><span class="file">foo/bar</span></samp>
+
+<p>For example, if a file <samp class="file">bazqux</samp> is in the <samp class="file">foo/bar</samp>
 subdirectory of the package directory, Stow would use
-&lsquo;<samp><span class="samp">/foo/bar/bazqux</span></samp>&rsquo; as the text for matching against regular
-expressions which contain &lsquo;<samp><span class="samp">/</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">bazqux</span></samp>&rsquo; as the text for
-matching against regular expressions which don't contain &lsquo;<samp><span class="samp">/</span></samp>&rsquo;. 
-Then regular expressions &lsquo;<samp><span class="samp">bazqux</span></samp>&rsquo;, &lsquo;<samp><span class="samp">baz.*</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.*qux</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">bar/.*x</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">^/foo/.*qux</span></samp>&rsquo; would all match (causing the
-file to be ignored), whereas &lsquo;<samp><span class="samp">bar</span></samp>&rsquo;, &lsquo;<samp><span class="samp">baz</span></samp>&rsquo;, &lsquo;<samp><span class="samp">qux</span></samp>&rsquo;, and
-&lsquo;<samp><span class="samp">o/bar/b</span></samp>&rsquo; would not (although &lsquo;<samp><span class="samp">bar</span></samp>&rsquo; would cause its parent
+&lsquo;<samp class="samp">/foo/bar/bazqux</samp>&rsquo; as the text for matching against regular
+expressions which contain &lsquo;<samp class="samp">/</samp>&rsquo;, and &lsquo;<samp class="samp">bazqux</samp>&rsquo; as the text for
+matching against regular expressions which don&rsquo;t contain &lsquo;<samp class="samp">/</samp>&rsquo;.
+Then regular expressions &lsquo;<samp class="samp">bazqux</samp>&rsquo;, &lsquo;<samp class="samp">baz.*</samp>&rsquo;, &lsquo;<samp class="samp">.*qux</samp>&rsquo;,
+&lsquo;<samp class="samp">bar/.*x</samp>&rsquo;, and &lsquo;<samp class="samp">^/foo/.*qux</samp>&rsquo; would all match (causing the
+file to be ignored), whereas &lsquo;<samp class="samp">bar</samp>&rsquo;, &lsquo;<samp class="samp">baz</samp>&rsquo;, &lsquo;<samp class="samp">qux</samp>&rsquo;, and
+&lsquo;<samp class="samp">o/bar/b</samp>&rsquo; would not (although &lsquo;<samp class="samp">bar</samp>&rsquo; would cause its parent
 directory to be ignored and prevent Stow from recursing into that
-anyway, in which case the file <samp><span class="file">bazqux</span></samp> would not even be
+anyway, in which case the file <samp class="file">bazqux</samp> would not even be
 considered for stowing).
-
-   <p>As a special exception to the above algorithm, any
-<samp><span class="file">.stow-local-ignore</span></samp> present in the top-level package directory
-is <em>always</em> ignored, regardless of the contents of any ignore
+</p>
+<p>As a special exception to the above algorithm, any
+<samp class="file">.stow-local-ignore</samp> present in the top-level package directory
+is <em class="emph">always</em> ignored, regardless of the contents of any ignore
 list, because this file serves no purpose outside the stow directory.
-
-<!-- =========================================================================== -->
-   <div class="footnote">
+</p>
+</div>
+<div class="footnotes-segment">
 <hr>
-<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Exact matching means the
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5 class="footnote-body-heading"><a id="FOOT4" href="#DOCF4">(4)</a></h5>
+<p>Exact matching means the
 regular expression is anchored at the beginning and end, in contrast
 to unanchored regular expressions which will match a substring.</p>
-
-   <p class="footnote"><small>[<a name="fn-2" href="#fnd-2">2</a>]</small> In this context, &ldquo;subpath&rdquo; means a contiguous
+<h5 class="footnote-body-heading"><a id="FOOT5" href="#DOCF5">(5)</a></h5>
+<p>In this context, &ldquo;subpath&rdquo; means a contiguous
 subset of path segments; e.g for the relative path
-<samp><span class="file">one/two/three</span></samp>, there are six valid subpaths: <samp><span class="file">one</span></samp>,
-<samp><span class="file">two</span></samp>, <samp><span class="file">three</span></samp>, <samp><span class="file">one/two</span></samp>, <samp><span class="file">two/three</span></samp>,
-<samp><span class="file">one/two/three</span></samp>.</p>
-
-   <p class="footnote"><small>[<a name="fn-3" href="#fnd-3">3</a>]</small> The &ldquo;basename&rdquo; is the name of the file or
+<samp class="file">one/two/three</samp>, there are six valid subpaths: <samp class="file">one</samp>,
+<samp class="file">two</samp>, <samp class="file">three</samp>, <samp class="file">one/two</samp>, <samp class="file">two/three</samp>,
+<samp class="file">one/two/three</samp>.</p>
+<h5 class="footnote-body-heading"><a id="FOOT6" href="#DOCF6">(6)</a></h5>
+<p>The &ldquo;basename&rdquo; is the name of the file or
 directory itself, excluding any directory path prefix - as returned by
-the <samp><span class="command">basename</span></samp> command.</p>
+the <code class="command">basename</code> command.</p>
+</div>
+<hr>
+<div class="nav-panel">
+<p>
+Next: <a href="Justification-For-Yet-Another-Set-Of-Ignore-Files.html">Justification For Yet Another Set Of Ignore Files</a>, Previous: <a href="Motivation-For-Ignore-Lists.html">Motivation For Ignore Lists</a>, Up: <a href="Ignore-Lists.html">Ignore Lists</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
 
-   <hr></div>
 
-   </body></html>
 
+</body>
+</html>
