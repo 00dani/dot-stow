@@ -1,4 +1,4 @@
-@set UPDATED 23 October 2023
-@set UPDATED-MONTH October 2023
+@set UPDATED 2 November 2023
+@set UPDATED-MONTH November 2023
 @set EDITION 2.3.2-fixbug56727
 @set VERSION 2.3.2-fixbug56727

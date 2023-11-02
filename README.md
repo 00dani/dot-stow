@@ -8,7 +8,7 @@ To build this version of Stow for yourself (or, more likely, if you're me and ne
 git clone https://git.00dani.me/00dani/stow
 cd stow
 autoreconf -iv
-./configure --enable-relative --prefix=$PWD/out --with-pmdir=$PWD/out/lib/perl
+./configure --enable-relative --prefix=$PWD/out --with-pmdir=$PWD/out/lib/perl PERL=/usr/bin/perl
 make
 make install
 ```

@@ -1,6 +1,6 @@
 This is stow.info, produced by makeinfo version 7.1 from stow.texi.
 
-This manual describes GNU Stow version 2.3.2-fixbug56727 (23 October
+This manual describes GNU Stow version 2.3.2-fixbug56727 (2 November
 2023), a program for managing farms of symbolic links.
 
    Software and documentation is copyrighted by the following:
@@ -36,7 +36,7 @@ File: stow.info,  Node: Top,  Next: Introduction,  Up: (dir)
 Stow
 ****
 
-This manual describes GNU Stow 2.3.2-fixbug56727 (23 October 2023), a
+This manual describes GNU Stow 2.3.2-fixbug56727 (2 November 2023), a
 symlink farm manager which takes distinct sets of software and/or data
 located in separate directories on the filesystem, and makes them appear
 to be installed in a single directory tree.
